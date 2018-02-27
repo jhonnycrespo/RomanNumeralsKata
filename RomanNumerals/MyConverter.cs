@@ -1,5 +1,7 @@
 ﻿using System.Text;
 
+// https://remonsinnema.com/2011/12/05/practicing-tdd-using-the-roman-numerals-kata/
+
 namespace RomanNumerals
 {
     public class MyConverter
@@ -17,11 +19,21 @@ namespace RomanNumerals
                 remaining = AppendRomanNumerals(remaining, Values[i], RomanSymbols[i], result);
             }
 
-            for (int i = 0; i < remaining; i++)
+            // It seems that the for loop does something similar to what appendRomanNumerals does.
+            // The only difference is that the loop does it multiple times, while the method does it only once.
+            // We can generalize the method and rewrite the loop to make this duplication more visible.
+
+            //for (int i = 0; i < remaining; i++)
+            //{
+            //    result.Append("I");
+            //}
+
+            while (remaining >= 1)
             {
                 result.Append("I");
-            }
-            
+                remaining -= 1;
+            }   
+
             return result.ToString();
         }
 
@@ -29,7 +41,13 @@ namespace RomanNumerals
         {
             int result = number;
 
-            if (result >= value)
+            //if (result >= value)
+            //{
+            //    builder.Append(romanDigits);
+            //    result -= value;
+            //}
+
+            while (result >= value)
             {
                 builder.Append(romanDigits);
                 result -= value;
