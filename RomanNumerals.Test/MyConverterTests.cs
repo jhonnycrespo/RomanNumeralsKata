@@ -17,6 +17,16 @@ namespace RomanNumerals.Test
             Assert.AreEqual("VII", MyConverter.ToRoman(7));
             Assert.AreEqual("VIII", MyConverter.ToRoman(8));
             Assert.AreEqual("IX", MyConverter.ToRoman(9));
+            Assert.AreEqual("X", MyConverter.ToRoman(10));
+            Assert.AreEqual("XL", MyConverter.ToRoman(40));
+            Assert.AreEqual("XLV", MyConverter.ToRoman(45));
+            Assert.AreEqual("L", MyConverter.ToRoman(50));
+            Assert.AreEqual("XC", MyConverter.ToRoman(90));
+            Assert.AreEqual("C", MyConverter.ToRoman(100));
+            Assert.AreEqual("CD", MyConverter.ToRoman(400));
+            Assert.AreEqual("CM", MyConverter.ToRoman(900));
+            Assert.AreEqual("CMXCIX", MyConverter.ToRoman(999));
+            Assert.AreEqual("M", MyConverter.ToRoman(1000));
         }
     }
 }
