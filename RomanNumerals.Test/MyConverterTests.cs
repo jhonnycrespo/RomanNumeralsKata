@@ -3,7 +3,7 @@
 namespace RomanNumerals.Test
 {
     [TestClass]
-    public class UnitTest1
+    public class MyConverterTests
     {
         [TestMethod]
         public void ToRomanTest()
