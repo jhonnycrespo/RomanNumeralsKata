@@ -9,7 +9,7 @@ namespace RomanNumerals
             StringBuilder result = new StringBuilder();
             int remaining = number;
 
-            if (remaining == 9)
+            if (remaining >= 9)
             {
                 result.Append("IX");
                 remaining -= 9;
@@ -21,7 +21,7 @@ namespace RomanNumerals
                 remaining -= 5;
             }
 
-            if (remaining == 4)
+            if (remaining >= 4)
             {
                 result.Append("IV");
                 remaining -= 4;
