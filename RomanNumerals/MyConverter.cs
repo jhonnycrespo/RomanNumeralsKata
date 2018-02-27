@@ -9,6 +9,12 @@ namespace RomanNumerals
             StringBuilder result = new StringBuilder();
             int remaining = number;
 
+            if (remaining == 9)
+            {
+                result.Append("IX");
+                remaining -= 9;
+            }
+
             if (remaining >= 5)
             {
                 result.Append("V");
