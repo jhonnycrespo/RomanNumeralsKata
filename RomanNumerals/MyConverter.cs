@@ -9,30 +9,29 @@ namespace RomanNumerals
             StringBuilder result = new StringBuilder();
             int remaining = number;
 
-            if (remaining >= 9)
-            {
-                result.Append("IX");
-                remaining -= 9;
-            }
+            remaining = AppendRomanNumerals(remaining, 9, "IX", result);
+            remaining = AppendRomanNumerals(remaining, 5, "V", result);
+            remaining = AppendRomanNumerals(remaining, 4, "IV", result);
 
-            if (remaining >= 5)
-            {
-                result.Append("V");
-                remaining -= 5;
-            }
-
-            if (remaining >= 4)
-            {
-                result.Append("IV");
-                remaining -= 4;
-            }
-        
             for (int i = 0; i < remaining; i++)
             {
                 result.Append("I");
             }
             
             return result.ToString();
-        }   
+        }
+
+        private static int AppendRomanNumerals(int arabic, int value, string romanDigits, StringBuilder builder)
+        {
+            int result = arabic;
+
+            if (result >= value)
+            {
+                builder.Append(romanDigits);
+                result -= value;
+            }
+
+            return result;
+        }
     }
 }
