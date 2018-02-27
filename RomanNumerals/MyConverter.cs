@@ -4,14 +4,18 @@ namespace RomanNumerals
 {
     public class MyConverter
     {
+        private static readonly int[] Values = { 9, 5, 4 };
+        private static readonly string[] RomanSymbols = { "IX", "V", "IV" };
+
         public static string ToRoman(int number)
         {
             StringBuilder result = new StringBuilder();
             int remaining = number;
 
-            remaining = AppendRomanNumerals(remaining, 9, "IX", result);
-            remaining = AppendRomanNumerals(remaining, 5, "V", result);
-            remaining = AppendRomanNumerals(remaining, 4, "IV", result);
+            for (int i = 0; i < Values.Length; i++)
+            {
+                remaining = AppendRomanNumerals(remaining, Values[i], RomanSymbols[i], result);
+            }
 
             for (int i = 0; i < remaining; i++)
             {
@@ -21,9 +25,9 @@ namespace RomanNumerals
             return result.ToString();
         }
 
-        private static int AppendRomanNumerals(int arabic, int value, string romanDigits, StringBuilder builder)
+        private static int AppendRomanNumerals(int number, int value, string romanDigits, StringBuilder builder)
         {
-            int result = arabic;
+            int result = number;
 
             if (result >= value)
             {
