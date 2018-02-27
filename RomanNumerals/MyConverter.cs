@@ -7,23 +7,23 @@ namespace RomanNumerals
         public static string ToRoman(int number)
         {
             StringBuilder result = new StringBuilder();
+            int remaining = number;
 
-            if (number == 6)
-            {
-                result.Append("VI");
-            } else if (number == 5)
+            if (remaining >= 5)
             {
                 result.Append("V");
-            } else if (number == 4)
+                remaining -= 5;
+            }
+
+            if (remaining == 4)
             {
                 result.Append("IV");
+                remaining -= 4;
             }
-            else
+        
+            for (int i = 0; i < remaining; i++)
             {
-                for (int i = 0; i < number; i++)
-                {
-                    result.Append("I");
-                }
+                result.Append("I");
             }
             
             return result.ToString();
