@@ -8,7 +8,10 @@ namespace RomanNumerals
         {
             StringBuilder result = new StringBuilder();
 
-            if (number == 4)
+            if (number == 5)
+            {
+                result.Append("V");
+            } else if (number == 4)
             {
                 result.Append("IV");
             }
