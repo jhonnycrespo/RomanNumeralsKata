@@ -14,6 +14,8 @@ namespace RomanNumerals.Test
             Assert.AreEqual("IV", MyConverter.ToRoman(4));
             Assert.AreEqual("V", MyConverter.ToRoman(5));
             Assert.AreEqual("VI", MyConverter.ToRoman(6));
+            Assert.AreEqual("VII", MyConverter.ToRoman(7));
+            Assert.AreEqual("VIII", MyConverter.ToRoman(8));
         }
     }
 }
